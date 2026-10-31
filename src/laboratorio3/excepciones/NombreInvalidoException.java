@@ -1,6 +1,6 @@
 package laboratorio3.excepciones;
 
-public class NombreInvalidoException extends Exception {
+public class NombreInvalidoException extends IllegalArgumentException {
 
     private static final long serialVersionUID = 1L;
 

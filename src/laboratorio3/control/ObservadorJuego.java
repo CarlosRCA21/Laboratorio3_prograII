@@ -5,7 +5,7 @@ import laboratorio3.modelo.Carta;
 import laboratorio3.modelo.Jugador;
 
 public abstract class ObservadorJuego {
-    
+
     public void tableroActualizado() {
     }
 

@@ -5,11 +5,7 @@ import laboratorio3.modelo.Carta;
 import laboratorio3.modelo.Jugador;
 
 public abstract class ControlJuego {
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 99f33af7a91b0d8039275c4515a6bdd5f114ee71
     public static final int FILAS = 6;
     public static final int COLUMNAS = 6;
     public static final int TOTAL_CARTAS = FILAS * COLUMNAS;
@@ -90,8 +86,5 @@ public abstract class ControlJuego {
             observador.turnoCambiado(getJugadorTurno());
         }
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 99f33af7a91b0d8039275c4515a6bdd5f114ee71
 }

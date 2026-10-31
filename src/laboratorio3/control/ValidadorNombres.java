@@ -4,6 +4,7 @@ package laboratorio3.control;
 import laboratorio3.excepciones.NombreInvalidoException;
 
 public final class ValidadorNombres {
+
     public static final int LONGITUD_MAXIMA = 20;
 
     private ValidadorNombres() {

@@ -13,7 +13,10 @@ import laboratorio3.modelo.CartaEstandar;
 import laboratorio3.modelo.Jugador;
 
 public class ControladorJuego extends ControlJuego {
-        private static final String[] NOMBRES_POKEMON = {
+
+
+    private static final String[] NOMBRES_POKEMON = {
+
         "Bulbasaur", "Ivysaur", "Venusaur",
         "Charmander", "Charmeleon", "Charizard",
         "Squirtle", "Wartortle", "Blastoise",

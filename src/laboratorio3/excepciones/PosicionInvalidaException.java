@@ -1,6 +1,6 @@
 package laboratorio3.excepciones;
 
-public final class PosicionInvalidaException extends IndexOutOfBoundsException {
+public final class PosicionInvalidaException extends Exception {
 
     private static final long serialVersionUID = 1L;
 
@@ -9,7 +9,6 @@ public final class PosicionInvalidaException extends IndexOutOfBoundsException {
     }
 
     public PosicionInvalidaException(String mensaje, Throwable causa) {
-        super(mensaje);
-        initCause(causa);
+        super(mensaje, causa);
     }
 }

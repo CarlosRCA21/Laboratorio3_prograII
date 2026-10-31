@@ -1,6 +1,6 @@
 package laboratorio3.excepciones;
 
-public class SeleccionInvalidaException extends RuntimeException {
+public class SeleccionInvalidaException extends Exception {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,17 +1,17 @@
 package laboratorio3.modelo;
 
-import laboratorio3.excepciones.NombreInvalidoException;
-
 public class Jugador {
 
-    public static final int MAXIMO_LETRAS = 15;
-
-    private String nombre = "";
-    private int aciertos = 0;
-    private int puntaje = 0;
+    private final String nombre;
+    private int aciertos;
+    private int puntaje;
+    private long tiempoAcumuladoMs;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
+        this.aciertos = 0;
+        this.puntaje = 0;
+        this.tiempoAcumuladoMs = 0L;
     }
 
     public String getNombre() {
@@ -26,40 +26,31 @@ public class Jugador {
         return puntaje;
     }
 
-    // Suma un acierto y los puntos de la pareja encontrada
-    public void sumarPareja(int puntos) {
-        aciertos = aciertos + 1;
-        puntaje = puntaje + puntos;
+    public long getTiempoAcumuladoMs() {
+        return tiempoAcumuladoMs;
     }
 
-    // Se usa al empezar una partida nueva
+    public void registrarAcierto(int puntos) {
+        aciertos++;
+        puntaje += puntos;
+    }
+
+    public void sumarTiempo(long milisegundos) {
+        if (milisegundos > 0) {
+            tiempoAcumuladoMs += milisegundos;
+        }
+    }
+
+    public String getTiempoFormateado() {
+        long totalSegundos = tiempoAcumuladoMs / 1000L;
+        long minutos = totalSegundos / 60L;
+        long segundos = totalSegundos % 60L;
+        return String.format("%02d:%02d", minutos, segundos);
+    }
+
     public void reiniciar() {
         aciertos = 0;
         puntaje = 0;
-    }
-
-    
-    public static void validarNombres(String nombre1, String nombre2) throws NombreInvalidoException {
-        validarNombre(nombre1, "Jugador 1");
-        validarNombre(nombre2, "Jugador 2");
-
-        if (nombre1.trim().equalsIgnoreCase(nombre2.trim())) {
-            throw new NombreInvalidoException(
-                    "Los dos jugadores tienen el mismo nombre. Cambie el nombre del Jugador 2.");
-        }
-    }
-
-    private static void validarNombre(String nombre, String etiqueta) throws NombreInvalidoException {
-        if (nombre == null || nombre.length() == 0) {
-            throw new NombreInvalidoException("Falta el nombre del " + etiqueta + ".");
-        }
-        if (nombre.trim().length() == 0) {
-            throw new NombreInvalidoException(
-                    "El nombre del " + etiqueta + " solo tiene espacios. Escriba un nombre.");
-        }
-        if (nombre.trim().length() > MAXIMO_LETRAS) {
-            throw new NombreInvalidoException("El nombre del " + etiqueta
-                    + " es muy largo (máximo " + MAXIMO_LETRAS + " caracteres).");
-        }
+        tiempoAcumuladoMs = 0L;
     }
 }

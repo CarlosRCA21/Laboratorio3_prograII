@@ -1,9 +1,8 @@
-
 package laboratorio3.modelo;
 
-
 public class CartaEstandar extends Carta {
-      public CartaEstandar(int idPareja, String nombre) {
+
+    public CartaEstandar(int idPareja, String nombre) {
         super(idPareja, nombre);
     }
 

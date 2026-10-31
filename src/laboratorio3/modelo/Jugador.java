@@ -1,6 +1,6 @@
 package laboratorio3.modelo;
 
-
+import laboratorio3.excepciones.NombreInvalidoException;
 
 public class Jugador {
 
@@ -38,8 +38,7 @@ public class Jugador {
         puntaje = 0;
     }
 
-    // Revisa los dos nombres. Si alguno está mal, lanza la excepción propia
-    // con un mensaje que dice exactamente qué hay que corregir.
+    
     public static void validarNombres(String nombre1, String nombre2) throws NombreInvalidoException {
         validarNombre(nombre1, "Jugador 1");
         validarNombre(nombre2, "Jugador 2");

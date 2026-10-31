@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package laboratorio3.excepciones;
 
-/**
- *
- * @author claud
- */
-public class NombreInvalidoException {
-    
+public class NombreInvalidoException extends IllegalArgumentException {
+
+    private static final long serialVersionUID = 1L;
+
+    public NombreInvalidoException(String mensaje) {
+        super(mensaje);
+    }
+
+    public NombreInvalidoException(String mensaje, Throwable causa) {
+        super(mensaje, causa);
+    }
 }

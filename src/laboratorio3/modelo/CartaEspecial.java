@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package laboratorio3.modelo;
 
-/**
- *
- * @author claud
- */
-public class CartaEspecial {
-    
+
+public class CartaEspecial extends Carta {
+
+    public CartaEspecial(int idPareja, String nombre) {
+        super(idPareja, nombre);
+    }
+
+    @Override
+    public int obtenerPuntos() {
+        return 2;
+    }
+
+    @Override
+    public boolean esEspecial() {
+        return true;
+    }
 }
